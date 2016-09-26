@@ -1,0 +1,31 @@
+{
+  "name": "multiple-pages-vue",
+  "version": "0.0.0",
+  "description": "multiple-pages-vue",
+  "private": false,
+  "keywords": [
+  ],
+  "scripts": {
+    "dev": "cooking watch -p",
+    "dist": "cooking build -p",
+    "deploy": "cooking build --no-color",
+    "test": "cooking test karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:zuiidea/multiple-pages-vue.git/multiple-pages-vue.git"
+  },
+  "homepage": "git@github.com:zuiidea/multiple-pages-vue.git/multiple-pages-vue#readme",
+  "bugs": {
+    "url": "git@github.com:zuiidea/multiple-pages-vue.git/multiple-pages-vue/issues"
+  },
+  "author": "zuiidea",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.0.0-rc",
+    "babel-polyfill": "*"
+  },
+  "devDependencies": {
+    "cooking-vue2": "*"
+  }
+}
