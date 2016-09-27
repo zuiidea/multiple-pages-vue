@@ -29,7 +29,8 @@ cooking.set({
   alias: {
     'src': path.join(__dirname, 'src')
   },
-  extends: ['vue2', 'lint', 'less', 'autoprefixer']
+  // extends: ['vue2', 'lint', 'less', 'autoprefixer']
+  extends: ['vue2', 'less', 'autoprefixer']
 });
 
 module.exports = cooking.resolve();

@@ -1,15 +1,25 @@
 import Vue from 'vue';
-import App from './app';
 import 'element-ui/lib/theme-default/index.css';
-import {
-  Select,
-  Button
-} from 'element-ui';
+import routes from './routes'
 
-Vue.component(Select.name, Select);
-Vue.component(Button.name, Button);
-
-new Vue({ // eslint-disable-line
+const app = new Vue({
   el: '#app',
-  render: h => h(App)
-});
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      const matchingView = routes[this.currentRoute]
+      return matchingView
+        ? require('./pages/' + matchingView + '.vue')
+        : require('./pages/404.vue')
+    }
+  },
+  render (h) {
+    return h(this.ViewComponent)
+  }
+})
+
+window.addEventListener('popstate', () => {
+  app.currentRoute = window.location.pathname
+})
