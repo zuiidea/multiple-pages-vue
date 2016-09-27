@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "multiple-pages-vue",
   "private": false,
-  "keywords": [
-  ],
+  "keywords": [],
   "scripts": {
     "dev": "cooking watch -p",
     "dist": "cooking build -p",
@@ -22,8 +21,9 @@
   "author": "zuiidea",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.0.0-rc",
-    "babel-polyfill": "*"
+    "babel-polyfill": "*",
+    "element-ui": "^1.0.0-rc.4",
+    "vue": "^2.0.0-rc"
   },
   "devDependencies": {
     "cooking-vue2": "*"

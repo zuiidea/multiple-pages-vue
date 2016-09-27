@@ -1,12 +1,39 @@
 <template>
   <div>
-    <h1>multiple-pages-vue</h1>
-    <p>multiple-pages-vue</p>
+    <el-button>默认按钮</el-button>
+    <el-select v-model="value">
+     <el-option
+       v-for="item in options"
+       :label="item.label"
+       :value="item.value">
+     </el-option>
+   </el-select>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app'
-  };
+export default {
+  name: 'app',
+  data() {
+    return {
+      options: [{
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
+      }, {
+        value: '选项4',
+        label: '龙须面'
+      }, {
+        value: '选项5',
+        label: '北京烤鸭'
+      }],
+      value: ''
+    };
+  }
+};
 </script>
