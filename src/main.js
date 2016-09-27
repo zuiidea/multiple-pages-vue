@@ -1,25 +1,18 @@
-import Vue from 'vue';
-import 'element-ui/lib/theme-default/index.css';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import 'element-ui/lib/theme-default/index.css'
+import App from './app'
 import routes from './routes'
 
-const app = new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      const matchingView = routes[this.currentRoute]
-      return matchingView
-        ? require('./pages/' + matchingView + '.vue')
-        : require('./pages/404.vue')
-    }
-  },
-  render (h) {
-    return h(this.ViewComponent)
-  }
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes,
+  mode: 'hash',
+  base: __dirname
 })
 
-window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
-})
+const app = new Vue({
+  router,
+  render:h => h(App)
+}).$mount('#app')
